@@ -98,6 +98,22 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
+	public function actionEmprestimo()
+	{
+		$model = new Emprestimo;
+
+		// collect user input data
+		if(isset($_POST['Emprestimo']))
+		{
+			$model->attributes=$_POST['Emprestimo'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->emprestimo())
+				$this->redirect(Yii::app()->user->returnUrl);
+		}
+		// display the login form
+		$this->render('emprestimo',array('model'=>$model));
+	}
+
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
