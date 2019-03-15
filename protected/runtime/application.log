@@ -452,3 +452,145 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/japacred/index.php?r=gii
 ---
+2019/03/15 10:51:13 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:51:34 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:51:34 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:10 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:27 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:28 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:48 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:48 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:54 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:55 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:52:55 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:53:01 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:54:53 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 10:55:02 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /data/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /data/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /data/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /data/www/japacred/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japacred/index.php?r=gii
+---
+2019/03/15 12:27:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'japacred.tbl_loan' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_loan`.
+in /data/www/japacred/index.php (13)
