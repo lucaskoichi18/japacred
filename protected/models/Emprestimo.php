@@ -19,6 +19,7 @@ class Emprestimo extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
 	public function tableName()
 	{
 		return 'tbl_emprestimo';
@@ -32,9 +33,10 @@ class Emprestimo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('valor, parcelas, id_user, valorcet', 'required'),
+			array('valor, parcelas', 'required'),
 			array('parcelas, id_user', 'numerical', 'integerOnly'=>true),
 			array('valor, valorcet', 'length', 'max'=>10),
+			array('parcelas', 'numerical', 'min'=>10, 'tooSmall'=>'Mínimo de 10 parcelas!'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, valor, parcelas, id_user, valorcet', 'safe', 'on'=>'search'),
@@ -64,7 +66,7 @@ class Emprestimo extends CActiveRecord
 			'valor' => 'Valor',
 			'parcelas' => 'Parcelas',
 			'id_user' => 'Id User',
-			'valorcet' => 'Valorcet',
+			'valorcet' => 'Valor CET',
 		);
 	}
 
@@ -89,8 +91,6 @@ class Emprestimo extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('valor',$this->valor,true);
 		$criteria->compare('parcelas',$this->parcelas);
-		$criteria->compare('id_user',$this->id_user);
-		$criteria->compare('valorcet',$this->valorcet,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
