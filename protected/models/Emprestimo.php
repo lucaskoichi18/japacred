@@ -35,7 +35,7 @@ class Emprestimo extends CActiveRecord
 		return array(
 			array('valor, parcelas', 'required'),
 			array('parcelas, id_user', 'numerical', 'integerOnly'=>true),
-			array('valor, valorcet', 'length', 'max'=>10),
+			array('valor, valorcet', 'length', 'max'=>30),
 			array('parcelas', 'numerical', 'min'=>10, 'tooSmall'=>'Mínimo de 10 parcelas!'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

@@ -4,6 +4,25 @@
 /* @var $form CActiveForm */
 ?>
 
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#Emprestimo_valorcet, #Emprestimo_parcelas, #Emprestimo_valor").on("change", function() {
+		var valor = $('#Emprestimo_valor').val();
+		var parcelas = $('#Emprestimo_parcelas').val();
+		var valParcela = valor * Math.pow((1.065), parcelas);
+		var valParcela = valParcela / parcelas;
+		var valorcet = valParcela * parcelas;
+		console.log(valorcet);
+		$('#Emprestimo_valorcet').val(valorcet);
+	});
+})
+</script>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -40,13 +59,9 @@
 	</div>
 
 	<div class="row">
-		<?php $form->labelEx($model,'valorcet'); ?>
-		<?php $form->textField($model,'valorcet'); ?>
-		<?php $form->error($model,'valorcet'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo '<button onclick="calcularCET()">Calcular CET</button>' ?>	
+		<?php echo $form->labelEx($model,'valorcet'); ?>
+		<?php echo $form->textField($model,'valorcet'); ?>
+		<?php echo $form->error($model,'valorcet'); ?>
 	</div>
 
 	<div class="row buttons">	

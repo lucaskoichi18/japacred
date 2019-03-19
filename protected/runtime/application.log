@@ -2973,3 +2973,277 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/japacred/index.php?r=emprestimo/search
 ---
+2019/03/19 11:04:54 [error] [exception.CException] CException: Property "Emprestimo.calculoCET" is not defined. in /data/www/framework/base/CComponent.php:130
+Stack trace:
+#0 /data/www/framework/db/ar/CActiveRecord.php(145): CComponent->__get('calculoCET')
+#1 /data/www/framework/web/helpers/CHtml.php(2760): CActiveRecord->__get('calculoCET')
+#2 /data/www/framework/web/helpers/CHtml.php(2483): CHtml::resolveValue(Object(Emprestimo), 'calculoCET')
+#3 /data/www/framework/web/helpers/CHtml.php(1540): CHtml::activeInputField('text', Object(Emprestimo), 'calculoCET', Array)
+#4 /data/www/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(Emprestimo), 'calculoCET', Array)
+#5 /data/www/japacred/protected/views/emprestimo/_form.php(44): CActiveForm->textField(Object(Emprestimo), 'calculoCET')
+#6 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#7 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#8 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#9 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#10 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#11 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#12 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#13 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#14 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#15 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#16 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#20 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#23 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#26 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /data/www/japacred/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo
+---
+2019/03/19 11:40:23 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:58
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo
+---
+2019/03/19 11:40:50 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:67
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo
+---
+2019/03/19 11:42:26 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:67
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo
+---
+2019/03/19 11:42:28 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:67
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo
+---
+2019/03/19 11:42:30 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:67
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo
+---
+2019/03/19 11:42:50 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:67
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo/admin
+---
+2019/03/19 11:42:55 [error] [exception.ParseError] ParseError: syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in /data/www/japacred/protected/views/emprestimo/_form.php:67
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo/index
+---
+2019/03/19 11:45:34 [error] [exception.ParseError] ParseError: syntax error, unexpected 'var_dump' (T_STRING), expecting ',' or ';' in /data/www/japacred/protected/views/emprestimo/_form.php:76
+Stack trace:
+#0 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#1 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#2 /data/www/japacred/protected/views/emprestimo/create.php(18): CController->renderPartial('_form', Array)
+#3 /data/www/framework/web/CBaseController.php(126): require('/data/www/japac...')
+#4 /data/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/data/www/japac...', Array, true)
+#5 /data/www/framework/web/CController.php(872): CBaseController->renderFile('/data/www/japac...', Array, true)
+#6 /data/www/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /data/www/japacred/protected/controllers/EmprestimoController.php(94): CController->render('create', Array)
+#8 /data/www/framework/web/actions/CInlineAction.php(49): EmprestimoController->actionCreate()
+#9 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /data/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /data/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /data/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#16 /data/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /data/www/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController('emprestimo/crea...')
+#19 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /data/www/japacred/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/japacred/index.php?r=emprestimo/create
+HTTP_REFERER=http://127.0.0.1/japacred/index.php?r=emprestimo/view&id=30
+---
+2019/03/19 11:53:20 [error] [php] Undefined variable: valorcet (/data/www/japacred/protected/views/emprestimo/view.php:33)
+Stack trace:
+#0 /data/www/framework/web/CController.php(872): EmprestimoController->renderFile()
+#1 /data/www/framework/web/CController.php(785): EmprestimoController->renderPartial()
+#2 /data/www/japacred/protected/controllers/EmprestimoController.php(56): EmprestimoController->render()
+#3 unknown(0): EmprestimoController->actionView()
+#4 /data/www/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#5 /data/www/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /data/www/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /data/www/framework/web/filters/CFilterChain.php(134): EmprestimoController->runAction()
+#8 /data/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /data/www/framework/web/CController.php(1148): CAccessControlFilter->filter()
+#10 /data/www/framework/web/filters/CInlineFilter.php(58): EmprestimoController->filterAccessControl()
+#11 /data/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#12 /data/www/framework/web/CController.php(291): CFilterChain->run()
+#13 /data/www/framework/web/CController.php(265): EmprestimoController->runActionWithFilters()
+#14 /data/www/framework/web/CWebApplication.php(282): EmprestimoController->run()
+#15 /data/www/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /data/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /data/www/japacred/index.php(13): CWebApplication->run()
+REQUEST_URI=/japacred/index.php?r=emprestimo/view&id=32
+in /data/www/japacred/protected/views/emprestimo/view.php (33)
+in /data/www/japacred/protected/controllers/EmprestimoController.php (56)
+in /data/www/japacred/index.php (13)

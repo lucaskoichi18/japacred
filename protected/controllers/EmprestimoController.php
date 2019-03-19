@@ -57,18 +57,6 @@ class EmprestimoController extends Controller
 		));
 	}
 
-	public function calcularCET(){
-
-		$valParcela = $_POST['Emprestimo']['valor'] * pow((1.065), $_POST['Emprestimo']['parcelas']);
-		$valParcela = $valParcela/$_POST['Emprestimo']['parcelas'];
-		$valorcet = $valParcela * $_POST['Emprestimo']['parcelas'];
-
-		var_dump($valParcela);
-		var_dump($valorcet);
-		exit;
-
-	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
