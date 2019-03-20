@@ -70,6 +70,8 @@ class EmprestimoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		var_dump("ola");
+
 		if(isset($_POST['Emprestimo']))
 		{
 			$model->attributes=$_POST['Emprestimo'];

@@ -27,6 +27,7 @@ $this->menu=array(
 		'parcelas',
 		'id_user',
 		'valorcet',
+		'data',
 	),
 ));
 

@@ -85,6 +85,8 @@ class Parcelas extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('Emprestimo.data', Yii::app()->request->getParam('Emprestimo_data'), true);
+
 		$criteria->compare('id',$this->id);
 		$criteria->compare('valor',$this->valor,true);
 		$criteria->compare('vencimento',$this->vencimento);

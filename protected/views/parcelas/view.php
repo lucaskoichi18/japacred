@@ -19,7 +19,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'valor',
-		'vencimento',
+		'vencimento' => CHtml::textField('Emprestimo_data', Yii::app()->request->getParam('Emprestimo_data')),
 		'id_emprestimo',
 	),
 )); ?>

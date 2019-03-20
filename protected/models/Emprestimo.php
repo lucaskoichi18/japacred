@@ -9,6 +9,7 @@
  * @property integer $parcelas
  * @property integer $id_user
  * @property string $valorcet
+ * @property string $data
  *
  * The followings are the available model relations:
  * @property TblUser $idUser
@@ -37,6 +38,7 @@ class Emprestimo extends CActiveRecord
 			array('parcelas, id_user', 'numerical', 'integerOnly'=>true),
 			array('valor, valorcet', 'length', 'max'=>30),
 			array('parcelas', 'numerical', 'min'=>10, 'tooSmall'=>'Mínimo de 10 parcelas!'),
+			array('data', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, valor, parcelas, id_user, valorcet', 'safe', 'on'=>'search'),
@@ -67,6 +69,7 @@ class Emprestimo extends CActiveRecord
 			'parcelas' => 'Parcelas',
 			'id_user' => 'Id User',
 			'valorcet' => 'Valor CET',
+			'data' => "Data"
 		);
 	}
 

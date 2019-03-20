@@ -23,6 +23,20 @@ $(document).ready(function() {
 })
 </script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#Emprestimo_data").on("change", function() {
+		var today = new Date();
+		var dia = today.getDate();
+		var mes = today.getMonth();
+		var ano = today.getFullYear();
+		var data = ano + "-" + mes + "-" + dia;
+		var dataFormat = dia + "/" + mes + "/" + ano;
+		$('#Emprestimo_data').val(data);  
+	});
+})
+</script>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -62,6 +76,12 @@ $(document).ready(function() {
 		<?php echo $form->labelEx($model,'valorcet'); ?>
 		<?php echo $form->textField($model,'valorcet'); ?>
 		<?php echo $form->error($model,'valorcet'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'data'); ?>
+		<?php echo $form->textField($model,'data'); ?>
+		<?php echo $form->error($model,'data'); ?>
 	</div>
 
 	<div class="row buttons">	

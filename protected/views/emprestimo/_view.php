@@ -25,6 +25,10 @@
 	<?php echo CHtml::encode($data->valorcet); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('data')); ?>:</b>
+	<?php echo CHtml::encode($data->data); ?>
+	<br />
+
 	
 
 
