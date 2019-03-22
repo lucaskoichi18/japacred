@@ -8,14 +8,21 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List Emprestimo', 'url'=>array('index')),
-	array('label'=>'Create Emprestimo', 'url'=>array('create')),
-	array('label'=>'View Emprestimo', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Emprestimo', 'url'=>array('admin')),
-);
+$url = $this->createUrl('emprestimo/view', array('id'=>$model->id));
 ?>
 
-<h1>Update Emprestimo <?php echo $model->id; ?></h1>
+<h1>Alterar Empréstimo <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+	<div class="col-md-8">
+		<?php $this->renderPartial('_form', array('model'=>$model, 'users'=>$users)); ?>
+	</div>	
+	<div class="col-md-4">
+		<div class="list-group" >
+			<a href="/japacred/index.php?r=emprestimo/index" class="list-group-item ">Lista</a>
+			<a href="/japacred/index.php?r=emprestimo/create" class="list-group-item">Criar</a>
+			<a href="<?=$url?>" class="list-group-item">Detalhes</a>
+			<a href="/japacred/index.php?r=emprestimo/admin" class="list-group-item">Gerenciamento</a>
+		</div>
+	</div>
+</div>

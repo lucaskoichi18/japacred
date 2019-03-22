@@ -8,14 +8,20 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Create User', 'url'=>array('create')),
-	array('label'=>'View User', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage User', 'url'=>array('admin')),
-);
+$url = $this->createUrl('/user/view', array('id'=>$model->id));
 ?>
 
-<h1>Update User <?php echo $model->id; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<h1>Alterar Usuário <?php echo $model->id; ?></h1>
+<div class="row">
+	<div class="col-md-8">
+		<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	</div>	
+	<div class="col-md-4">
+		<div class="list-group" >
+			<a href="/japacred/index.php?r=user/index" class="list-group-item ">Lista</a>
+			<a href="/japacred/index.php?r=user/create" class="list-group-item">Criar</a>
+			<a href="<?=$url?>" class="list-group-item">Detalhes</a>
+			<a href="/japacred/index.php?r=user/admin" class="list-group-item">Gerenciamento</a>
+		</div>
+	</div>
+</div>

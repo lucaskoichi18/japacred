@@ -7,12 +7,22 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Emprestimo', 'url'=>array('index')),
-	array('label'=>'Manage Emprestimo', 'url'=>array('admin')),
-);
 ?>
 
 <h1>Create Emprestimo</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'users'=>$users)); ?>
+<div class="row">
+	<div class="col-md-8">
+		<?php $this->renderPartial('_form', array('model'=>$model, 'users'=>$users)); ?>
+	</div>
+	<div class="col-md-4">
+	<?php
+		$url = $this->createUrl('/emprestimo/view', array('id'=>$model->id));
+	?>
+
+	<div class="list-group" >
+		<a href="/japacred/index.php?r=emprestimo/index" class="list-group-item ">Lista</a>
+		<a href="/japacred/index.php?r=emprestimo/admin" class="list-group-item">Gerenciamento</a>
+	</div>
+</div>	
+

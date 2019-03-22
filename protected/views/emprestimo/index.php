@@ -5,16 +5,21 @@
 $this->breadcrumbs=array(
 	'Emprestimos',
 );
-
-$this->menu=array(
-	array('label'=>'Create Emprestimo', 'url'=>array('create')),
-	array('label'=>'Manage Emprestimo', 'url'=>array('admin')),
-);
 ?>
 
-<h1>Emprestimos</h1>
+<h1>Empréstimos</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+	<div class="row">
+		<div class="col-md-8">
+		<?php $this->widget('zii.widgets.CListView', array(
+			'dataProvider'=>$dataProvider,
+			'itemView'=>'_view',
+		)); ?>
+	</div>	
+
+<div class="col-md-4">
+	<div class="list-group" >
+		<a href="/japacred/index.php?r=emprestimo/create" class="list-group-item">Fazer Empréstimo</a>
+		<a href="/japacred/index.php?r=emprestimo/admin" class="list-group-item">Gerenciamento de Empréstimos</a>
+	</div>
+</div>

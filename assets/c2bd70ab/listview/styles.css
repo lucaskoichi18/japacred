@@ -6,18 +6,11 @@
 .list-view .summary
 {
 	margin: 0 0 5px 0;
-	text-align: right;
 }
 
 .list-view .sorter
 {
 	margin: 0 0 5px 0;
-	text-align: right;
-}
-
-.list-view .pager
-{
-	margin: 5px 0 0 0;
 	text-align: right;
 }
 

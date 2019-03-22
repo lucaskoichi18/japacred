@@ -53,40 +53,86 @@ $(document).ready(function() {
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-	<select name="Emprestimo[id_user]">
+		<?php echo $form->labelEx($model, 'user *', array(
+			'class'=>'col-sm-2 control-label'
+		));?>
+	<div class="col-sm-8">	
+	<select name="Emprestimo[id_user]" class="form-control">
 		<?php for ($i=0; $i < count($users); $i++): ?>
 			<option value="<?php echo $users[$i]['id']; ?>"><?php echo $users[$i]['username']; ?></option>
 		<?php endfor; ?>
 	</select>
 	</div>
+	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'valor'); ?>
-		<?php echo $form->textField($model,'valor'); ?>
+		<br>
+		<?php echo $form->labelEx($model,'valor', array(
+			'class'=>'col-sm-2 control-label'
+		)); ?>
+		<div class="col-sm-8">
+		<div class="input-group">
+		<div class="input-group-addon">R$</div>
+		<?php echo $form->textField($model, 'valor', array(
+			'class'=>'form-control', 'placeholder'=>'Valor'
+		)); ?>
+		</div>
+	</div>
 		<?php echo $form->error($model,'valor'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'parcelas'); ?>
-		<?php echo $form->textField($model,'parcelas'); ?>
+		<br>
+		<?php echo $form->labelEx($model,'parcelas', array(
+			'class'=>'col-sm-2 control-label'
+		)); ?>
+		<div class="col-sm-8">
+		<?php echo $form->textField($model, 'parcelas', array(
+			'class'=>'form-control', 'placeholder'=>'Parcelas'
+		)); ?>
+	</div>
 		<?php echo $form->error($model,'parcelas'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'valorcet'); ?>
-		<?php echo $form->textField($model,'valorcet'); ?>
+		<br>
+		<?php echo $form->labelEx($model,'valorcet', array(
+			'class'=>'col-sm-2 control-label'
+		)); ?>
+		<div class="col-sm-8">
+		<div class="input-group">
+		<div class="input-group-addon">R$</div>
+		<?php echo $form->textField($model, 'valor', array(
+			'class'=>'form-control', 'placeholder'=>'Valor'
+		)); ?>
+		</div>
 		<?php echo $form->error($model,'valorcet'); ?>
+		</div>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'data'); ?>
-		<?php echo $form->textField($model,'data'); ?>
+		<br>
+		<?php echo $form->labelEx($model,'data', array(
+			'class'=>'col-sm-2 control-label'
+		)); ?>
+		<div class="col-sm-8">
+		<?php echo $form->textField($model, 'data', array(
+			'class'=>'form-control', 'placeholder'=>'00/00/0000'
+		)); ?>
+	</div>
 		<?php echo $form->error($model,'data'); ?>
 	</div>
 
-	<div class="row buttons">	
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<br>
+
+	<div class="row buttons">
+		<div class="col-sm-offset-2 col-sm-10">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array(
+			'class'=>"btn btn-default"
+		)); ?>
+		</div>
 	</div>
+	<br>
 
 <?php $this->endWidget(); ?>
 

@@ -6,13 +6,21 @@ $this->breadcrumbs=array(
 	'Users'=>array('index'),
 	'Create',
 );
-
-$this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Manage User', 'url'=>array('admin')),
-);
 ?>
 
-<h1>Create User</h1>
+<h1>Cadastrar Usuário</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+	<div class="col-md-8">
+		<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	</div>
+	<div class="col-md-4">
+	<?php
+		$url = $this->createUrl('/user/view', array('id'=>$model->id));
+	?>
+
+	<div class="list-group" >
+		<a href="/japacred/index.php?r=user/index" class="list-group-item ">Lista</a>
+		<a href="/japacred/index.php?r=user/admin" class="list-group-item">Gerenciamento</a>
+	</div>
+</div>	

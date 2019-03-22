@@ -10,7 +10,6 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Emprestimo', 'url'=>array('index')),
 	array('label'=>'Create Emprestimo', 'url'=>array('create')),
-	array('label'=>'Update Emprestimo', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Emprestimo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Emprestimo', 'url'=>array('admin')),
 	array('label'=>'Parcelas', 'url'=>array('parcelas/admin')),
@@ -21,6 +20,7 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'htmlOptions'=>array('class'=>'table table-hover'),
 	'attributes'=>array(
 		'id',
 		'valor',
