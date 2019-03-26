@@ -8,6 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	array('label'=>'List Parcelas', 'url'=>array('index')),
+	array('label'=>'Create Parcelas', 'url'=>array('create')),
+	array('label'=>'Update Parcelas', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Parcelas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Parcelas', 'url'=>array('admin')),
 );
 ?>
@@ -19,7 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'valor',
-		'vencimento' => CHtml::textField('Emprestimo_data', Yii::app()->request->getParam('Emprestimo_data')),
+		'vencimento',
 		'id_emprestimo',
 	),
 )); ?>

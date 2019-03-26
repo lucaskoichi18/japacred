@@ -60,7 +60,7 @@
 								<li><a href="http://127.0.0.1/japacred/index.php?r=emprestimo/admin">Gerenciamento de Empréstimos</a></li>
 							</ul>
 						</li><li>
-							<a href="http://127.0.0.1/japacred/index.php?r=site/login" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+							<a href="http://127.0.0.1/japacred/index.php?r=site/logout" role="button" aria-haspopup="true" aria-expanded="false">Logout</a>
 						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->

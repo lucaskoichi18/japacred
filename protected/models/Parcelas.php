@@ -10,7 +10,7 @@
  * @property integer $id_emprestimo
  *
  * The followings are the available model relations:
- * @property TblEmprestimo $idEmprestimo
+ * @property Emprestimo $fk_emprestimo
  */
 class Parcelas extends CActiveRecord
 {
@@ -33,9 +33,7 @@ class Parcelas extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('valor, vencimento, id_emprestimo', 'required'),
-			array('vencimento, id_emprestimo', 'numerical', 'integerOnly'=>true),
-			array('valor', 'length', 'max'=>10),
+			array('id_emprestimo', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, valor, vencimento, id_emprestimo', 'safe', 'on'=>'search'),
@@ -50,7 +48,7 @@ class Parcelas extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idEmprestimo' => array(self::BELONGS_TO, 'TblEmprestimo', 'id_emprestimo'),
+			'fk_emprestimo' => array(self::BELONGS_TO, 'Emprestimo', 'id_emprestimo'),
 		);
 	}
 

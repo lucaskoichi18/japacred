@@ -25,14 +25,11 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#Emprestimo_data").on("change", function() {
-		var today = new Date();
-		var dia = today.getDate();
-		var mes = today.getMonth();
-		var ano = today.getFullYear();
-		var data = ano + "-" + mes + "-" + dia;
-		var dataFormat = dia + "/" + mes + "/" + ano;
-		$('#Emprestimo_data').val(data);  
+	$("#Emprestimo_data").on("onload", function() {
+
+		var dataFormat = $('#Emprestimo_data').val();
+		var dataFormat = 
+		$('#Emprestimo_data').val(dataFormat);  
 	});
 })
 </script>
@@ -102,7 +99,7 @@ $(document).ready(function() {
 		<div class="col-sm-8">
 		<div class="input-group">
 		<div class="input-group-addon">R$</div>
-		<?php echo $form->textField($model, 'valor', array(
+		<?php echo $form->textField($model, 'valorcet', array(
 			'class'=>'form-control', 'placeholder'=>'Valor'
 		)); ?>
 		</div>
@@ -117,7 +114,7 @@ $(document).ready(function() {
 		)); ?>
 		<div class="col-sm-8">
 		<?php echo $form->textField($model, 'data', array(
-			'class'=>'form-control', 'placeholder'=>'00/00/0000'
+			'class'=>'form-control-static', 'value'=>date('Y-m-d')
 		)); ?>
 	</div>
 		<?php echo $form->error($model,'data'); ?>

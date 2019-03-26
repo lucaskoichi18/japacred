@@ -12,8 +12,8 @@
  * @property string $data
  *
  * The followings are the available model relations:
- * @property TblUser $idUser
- * @property TblParcelas[] $tblParcelases
+ * @property User $idUser
+ * @property Parcelas[] $fk_parcelas
  */
 class Emprestimo extends CActiveRecord
 {
@@ -39,6 +39,7 @@ class Emprestimo extends CActiveRecord
 			array('valor, valorcet', 'length', 'max'=>30),
 			array('parcelas', 'numerical', 'min'=>10, 'tooSmall'=>'Mínimo de 10 parcelas!'),
 			array('data', 'safe'),
+			array('fk_parcelas', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, valor, parcelas, id_user, valorcet', 'safe', 'on'=>'search'),
@@ -53,8 +54,8 @@ class Emprestimo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idUser' => array(self::BELONGS_TO, 'TblUser', 'id_user'),
-			'tblParcelases' => array(self::HAS_MANY, 'TblParcelas', 'id_emprestimo'),
+			'idUser' => array(self::BELONGS_TO, 'User', 'id_user'),
+			'fk_parcelas' => array(self::HAS_MANY, 'Parcelas', 'id_emprestimo'),
 		);
 	}
 
@@ -69,7 +70,8 @@ class Emprestimo extends CActiveRecord
 			'parcelas' => 'Parcelas',
 			'id_user' => 'Id User',
 			'valorcet' => 'Valor CET',
-			'data' => "Data"
+			'data' => "Data",
+			'fk_parcelas' => 'Parcelas'
 		);
 	}
 
@@ -94,6 +96,10 @@ class Emprestimo extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('valor',$this->valor,true);
 		$criteria->compare('parcelas',$this->parcelas);
+		$criteria->compare('id_user',$this->id_user);
+		$criteria->compare('valorcet',$this->valorcet);
+		$criteria->compare('data',$this->data);
+		
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

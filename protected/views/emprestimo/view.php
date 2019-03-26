@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Create Emprestimo', 'url'=>array('create')),
 	array('label'=>'Delete Emprestimo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Emprestimo', 'url'=>array('admin')),
-	array('label'=>'Parcelas', 'url'=>array('parcelas/admin')),
+	array('label'=>'Parcelas', 'url'=>array('parcelas/index')),
 );
 ?>
 
@@ -23,10 +23,16 @@ $this->menu=array(
 	'htmlOptions'=>array('class'=>'table table-hover'),
 	'attributes'=>array(
 		'id',
-		'valor',
+		array(
+			'label'=>'Valor',
+			'value'=>EmprestimoController::formatPrice($model->valor)
+		),
 		'parcelas',
 		'id_user',
-		'valorcet',
+		array(
+			'label'=>'Valor CET',
+			'value'=>EmprestimoController::formatPrice($model->valor)
+		),
 		'data',
 	),
 ));

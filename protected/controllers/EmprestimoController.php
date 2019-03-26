@@ -73,8 +73,27 @@ class EmprestimoController extends Controller
 		if(isset($_POST['Emprestimo']))
 		{
 			$model->attributes=$_POST['Emprestimo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+
+				$valorParcela = $_POST['Emprestimo']['valorcet']/$_POST['Emprestimo']['parcelas'];
+
+				$data = array();
+
+				for($i=1; $i <= $_POST['Emprestimo']['parcelas']; $i++){
+					$data[$i] = date('Y-m-d', strtotime('+'.$i.' month'));
+				}
+				
+				// foreach ($_POST['Emprestimo']['fk_parcelas'] as $parcelaId){					
+					for($i=0; $i < $_POST['Emprestimo']['parcelas']; $i++){
+						$parcela = new Parcelas;
+						$parcela->valor = $valorParcela;
+						$parcela->vencimento = $data[$i+1];
+						$parcela->id_emprestimo = $model->id;
+						if(!$parcela->save()) var_dump($parcela->errors);
+					}
+					$this->redirect(array('view','id'=>$model->id));			
+				//}
+			}
 		}
 
 		$this->render('create',array(
@@ -174,4 +193,11 @@ class EmprestimoController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public static function formatPrice($vlprice){
+		if(!$vlprice > 0) $vlprice = 0;
+		return "R$ " .number_format($vlprice, 2, "," , ".");
+			
+		}
+	
 }

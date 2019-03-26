@@ -125,6 +125,7 @@ class ParcelasController extends Controller
 		$dataProvider=new CActiveDataProvider('Parcelas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+
 		));
 	}
 
@@ -170,4 +171,10 @@ class ParcelasController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public static function formatPrice($vlprice){
+		if(!$vlprice > 0) $vlprice = 0;
+		return "R$ " .number_format($vlprice, 2, "," , ".");
+			
+		}
 }
