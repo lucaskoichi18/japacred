@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Create Emprestimo', 'url'=>array('create')),
 	array('label'=>'Delete Emprestimo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Emprestimo', 'url'=>array('admin')),
-	array('label'=>'Parcelas', 'url'=>array('parcelas/index')),
+	array('label'=>'Parcelas', 'url'=>array('parcelas/index', 'id_emprestimo'=>$model->id)),
 );
 ?>
 
@@ -31,7 +31,7 @@ $this->menu=array(
 		'id_user',
 		array(
 			'label'=>'Valor CET',
-			'value'=>EmprestimoController::formatPrice($model->valor)
+			'value'=>EmprestimoController::formatPrice($model->valorcet)
 		),
 		'data',
 	),

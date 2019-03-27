@@ -28,7 +28,7 @@
 <div class="container" id="page">
 
 	<div id="mainmenu">
-		<nav class="navbar navbar-inverse" style="width: 100%; margin: 0px; padding: 0px">
+		<nav class="navbar navbar-inverse" style="width: 100%; margin: 0px; padding: 0px;">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -45,7 +45,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuários <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuários <span class="glyphicon glyphicon-user"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="http://127.0.0.1/japacred/index.php?r=user/create">Cadastrar Usuário</a></li>
 								<li><a href="http://127.0.0.1/japacred/index.php?r=user/index">Listar Usuários</a></li>
@@ -53,14 +53,14 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empréstimos <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empréstimos <span class="glyphicon glyphicon-usd"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="http://127.0.0.1/japacred/index.php?r=emprestimo/create">Fazer Empréstimo</a></li>
 								<li><a href="http://127.0.0.1/japacred/index.php?r=emprestimo/index">Listar Empréstimos</a></li>
 								<li><a href="http://127.0.0.1/japacred/index.php?r=emprestimo/admin">Gerenciamento de Empréstimos</a></li>
 							</ul>
 						</li><li>
-							<a href="http://127.0.0.1/japacred/index.php?r=site/logout" role="button" aria-haspopup="true" aria-expanded="false">Logout</a>
+							<a href="http://127.0.0.1/japacred/index.php?r=site/logout" role="button" aria-haspopup="true" aria-expanded="false">Logout <span class="glyphicon glyphicon-off"></a>
 						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
@@ -72,7 +72,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Japa Cred.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

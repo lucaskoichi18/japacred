@@ -120,12 +120,31 @@ class ParcelasController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($id_emprestimo)
 	{
-		$dataProvider=new CActiveDataProvider('Parcelas');
+		$connection=Yii::app()->db;
+		//$id_emprestimo = Yii::app()->emprestimo->id;
+		$sql = 'SELECT * FROM tbl_parcelas
+				WHERE id_emprestimo 
+				LIKE :id_emprestimo';
+		$command=$connection->createCommand($sql);
+		$command->bindParam(':id_emprestimo', $id_emprestimo);
+		$rawData = $command->queryAll();
+
+		$dataProvider=new CArrayDataProvider($rawData, array(
+			'id'=>'emprestimo',
+			'sort'=>array(
+				'defaultOrder' => 'post.created',
+			),
+			'pagination'=>array(
+				'pageSize'=>10,
+			),
+		));
+
+		//$dataProvider=new CActiveDataProvider('Parcelas');
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-
 		));
 	}
 
@@ -157,6 +176,14 @@ class ParcelasController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+
+	public function loadModelFK($id_emprestimo){
+
+		$model=Parcelas::model()->findAllByAttributes(array('id_emprestimo' => $id_emprestimo));
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;	
 	}
 
 	/**
