@@ -22,7 +22,10 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'valor',
+		array(
+			'label'=>'Valor',
+			'value'=>ParcelasController::formatPrice($model->valor)
+		),
 		'vencimento',
 		'id_emprestimo',
 	),

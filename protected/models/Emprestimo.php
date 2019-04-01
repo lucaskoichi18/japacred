@@ -10,6 +10,7 @@
  * @property integer $id_user
  * @property string $valorcet
  * @property string $data
+ * @property string $valParcela
  *
  * The followings are the available model relations:
  * @property User $idUser
@@ -40,6 +41,7 @@ class Emprestimo extends CActiveRecord
 			array('parcelas', 'numerical', 'min'=>10, 'tooSmall'=>'Mínimo de 10 parcelas!'),
 			array('data', 'safe'),
 			array('fk_parcelas', 'safe'),
+			array('valParcela', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, valor, parcelas, id_user, valorcet', 'safe', 'on'=>'search'),
@@ -54,7 +56,7 @@ class Emprestimo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idUser' => array(self::BELONGS_TO, 'User', 'id_user'),
+			'fk_user' => array(self::BELONGS_TO, 'User', 'id_user'),
 			'fk_parcelas' => array(self::HAS_MANY, 'Parcelas', 'id_emprestimo'),
 		);
 	}
@@ -71,7 +73,8 @@ class Emprestimo extends CActiveRecord
 			'id_user' => 'Id User',
 			'valorcet' => 'Valor CET',
 			'data' => "Data",
-			'fk_parcelas' => 'Parcelas'
+			'fk_parcelas' => 'Parcelas',
+			'valParcela' => 'Valor de cada parcela'
 		);
 	}
 
@@ -99,7 +102,7 @@ class Emprestimo extends CActiveRecord
 		$criteria->compare('id_user',$this->id_user);
 		$criteria->compare('valorcet',$this->valorcet);
 		$criteria->compare('data',$this->data);
-		
+		$criteria->compare('valParcela',$this->valParcela);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -115,5 +118,15 @@ class Emprestimo extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public static function formatPrice($vlprice){
+		if(!$vlprice > 0) $vlprice = 0;
+		return "R$ " .number_format($vlprice, 2, "," , ".");
+	}
+
+	function beforeDelete(){
+		Parcelas::model()->deleteAll('`id_emprestimo`=:id_emprestimo', array(':id_emprestimo' => $id));
+		return parent::beforeDelete();
 	}
 }

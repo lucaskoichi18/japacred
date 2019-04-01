@@ -114,7 +114,7 @@ class ParcelasController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}
 
 	/**
@@ -201,7 +201,6 @@ class ParcelasController extends Controller
 
 	public static function formatPrice($vlprice){
 		if(!$vlprice > 0) $vlprice = 0;
-		return "R$ " .number_format($vlprice, 2, "," , ".");
-			
+		return "R$ " .number_format($vlprice, 2, "," , ".");			
 		}
 }

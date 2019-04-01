@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1>Create Emprestimo</h1>
+<h1>Fazer Empréstimo</h1>
 
 <div class="row">
 	<div class="col-md-8">

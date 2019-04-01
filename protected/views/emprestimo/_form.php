@@ -11,25 +11,18 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#Emprestimo_valorcet, #Emprestimo_parcelas, #Emprestimo_valor").on("change", function() {
+	$("#Emprestimo_valorcet, #Emprestimo_parcelas, #Emprestimo_valor, #Emprestimo_valParcela").on("change", function() {
 		var valor = $('#Emprestimo_valor').val();
 		var parcelas = $('#Emprestimo_parcelas').val();
 		var valParcela = valor * Math.pow((1.065), parcelas);
 		var valParcela = valParcela / parcelas;
 		var valorcet = valParcela * parcelas;
-		console.log(valorcet);
+		var valorcet = valorcet.toFixed(2).replace(".",",");
+		var valParcela = valParcela.toFixed(2).replace(".",",");
+		//var valorcet = valorcet.toLocaleString('pt-BR');
+		//var valParcela = valParcela.toLocaleString('pt-BR');
 		$('#Emprestimo_valorcet').val(valorcet);
-	});
-})
-</script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#Emprestimo_data").on("onload", function() {
-
-		var dataFormat = $('#Emprestimo_data').val();
-		var dataFormat = 
-		$('#Emprestimo_data').val(dataFormat);  
+		$('#Emprestimo_valParcela').val(valParcela);
 	});
 })
 </script>
@@ -50,7 +43,7 @@ $(document).ready(function() {
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model, 'user *', array(
+		<?php echo $form->labelEx($model, 'id_user', array(
 			'class'=>'col-sm-2 control-label'
 		));?>
 	<div class="col-sm-8">	
@@ -109,12 +102,28 @@ $(document).ready(function() {
 
 	<div class="row">
 		<br>
+		<?php echo $form->labelEx($model,'valParcela', array(
+			'class'=>'col-sm-2 control-label'
+		)); ?>
+		<div class="col-sm-8">
+		<div class="input-group">
+		<div class="input-group-addon">R$</div>
+		<?php echo $form->textField($model, 'valParcela', array(
+			'class'=>'form-control', 'placeholder'=>'Valor'
+		)); ?>
+		</div>
+		<?php echo $form->error($model,'valparcela'); ?>
+		</div>
+	</div>
+
+	<div class="row">
+		<br>
 		<?php echo $form->labelEx($model,'data', array(
 			'class'=>'col-sm-2 control-label'
 		)); ?>
 		<div class="col-sm-8">
 		<?php echo $form->textField($model, 'data', array(
-			'class'=>'form-control-static', 'value'=>date('Y-m-d')
+			'class'=>'form-control', 'value'=>date('d/m/Y')
 		)); ?>
 	</div>
 		<?php echo $form->error($model,'data'); ?>

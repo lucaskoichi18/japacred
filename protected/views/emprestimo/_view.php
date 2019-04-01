@@ -19,8 +19,11 @@
 					<b><?php echo CHtml::encode($data->getAttributeLabel('parcelas')); ?>:</b>
 					<?php echo CHtml::encode($data->parcelas); ?>
 					<br />
-					<b><?php echo CHtml::encode($data->getAttributeLabel('id_user')); ?>:</b>
-					<?php echo CHtml::encode($data->id_user); ?>
+					<b><?php echo CHtml::encode($data->getAttributeLabel('valParcela')); ?>:</b>
+					<?php echo CHtml::encode(EmprestimoController::formatPrice($data->valParcela)); ?>
+					<br />
+					<b><?php echo CHtml::encode($data->getAttributeLabel('fk_user.username')); ?>:</b>
+					<?php echo CHtml::encode($data->fk_user->username); ?>
 					<br />
 					<b><?php echo CHtml::encode($data->getAttributeLabel('valorcet')); ?>:</b>
 					<?php echo CHtml::encode(EmprestimoController::formatPrice($data->valorcet)); ?>

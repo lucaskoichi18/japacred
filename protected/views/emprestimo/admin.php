@@ -7,11 +7,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Emprestimo', 'url'=>array('index')),
-	array('label'=>'Create Emprestimo', 'url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -26,7 +21,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Emprestimos</h1>
+<h1>Gerenciamento de Empréstimos</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -46,13 +41,33 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'valor',
+		array(
+			'header'=>'Valor',
+			'name'  =>'valor',
+			'value' =>'$data->formatPrice($data->valor)',
+		),
 		'parcelas',
+		array(
+			'header'=>'Valor Parcela',
+			'name'  =>'valParcela',
+			'value' =>'$data->formatPrice($data->valParcela)',
+		),
 		'id_user',
-		'valorcet',
+		array(
+			'header'=>'Valor CET',
+			'name'  =>'valorcet',
+			'value' =>'$data->formatPrice($data->valorcet)',
+		),
 		'data',
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
 )); ?>
+
+<div>
+	<div class="col-md-4">
+		<a href="/japacred/index.php?r=emprestimo/index" class="list-group-item ">Lista</a>
+		<a href="/japacred/index.php?r=emprestimo/create" class="list-group-item">Criar</a>
+	</div>	
+</div>

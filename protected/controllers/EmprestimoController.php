@@ -75,24 +75,27 @@ class EmprestimoController extends Controller
 			$model->attributes=$_POST['Emprestimo'];
 			if($model->save()){
 
-				$valorParcela = $_POST['Emprestimo']['valorcet']/$_POST['Emprestimo']['parcelas'];
+				$valorcet = (float) $_POST['Emprestimo']['valorcet'];
+
+				$parcelas = (float) $_POST['Emprestimo']['parcelas'];
+
+				$valorParcela = $valorcet/$parcelas;
 
 				$data = array();
 
 				for($i=1; $i <= $_POST['Emprestimo']['parcelas']; $i++){
-					$data[$i] = date('Y-m-d', strtotime('+'.$i.' month'));
+					$data[$i] = date('d/m/Y', strtotime('+'.$i.' month'));
 				}
-				
-				// foreach ($_POST['Emprestimo']['fk_parcelas'] as $parcelaId){					
-					for($i=0; $i < $_POST['Emprestimo']['parcelas']; $i++){
-						$parcela = new Parcelas;
-						$parcela->valor = $valorParcela;
-						$parcela->vencimento = $data[$i+1];
-						$parcela->id_emprestimo = $model->id;
-						if(!$parcela->save()) var_dump($parcela->errors);
-					}
-					$this->redirect(array('view','id'=>$model->id));			
-				//}
+						
+				for($i=0; $i < $_POST['Emprestimo']['parcelas']; $i++){
+					$parcela = new Parcelas;
+					$parcela->valor = $valorParcela;
+					$parcela->vencimento = $data[$i+1];
+					$parcela->id_emprestimo = $model->id;
+					if(!$parcela->save()) var_dump($parcela->errors);
+				}
+
+				$this->redirect(array('view','id'=>$model->id));			
 			}
 		}
 
@@ -109,22 +112,45 @@ class EmprestimoController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$users = User::model()->findAll();
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$model=$this->loadModel($id);
 
 		if(isset($_POST['Emprestimo']))
 		{
 			$model->attributes=$_POST['Emprestimo'];
-			if($model->save())
+			if($model->save()){
+
+				$valorcet = (float) $_POST['Emprestimo']['valorcet'];
+
+				$_parcelas = (float) $_POST['Emprestimo']['parcelas'];
+
+				$valorParcela = $valorcet/$_parcelas;
+
+				$data = array();
+
+				for($i=1; $i <= $_POST['Emprestimo']['parcelas']; $i++){
+					$data[$i] = date('d/m/Y', strtotime('+'.$i.' month'));
+				}
+
+				Parcelas::model()->deleteAll('`id_emprestimo`=:id_emprestimo', array(':id_emprestimo' => $id));
+									
+				for($i=0; $i < $_POST['Emprestimo']['parcelas']; $i++){
+					$parcela = new Parcelas;
+					$parcela->valor = $valorParcela;
+					$parcela->vencimento = $data[$i+1];
+					$parcela->id_emprestimo = $model->id;
+					if(!$parcela->save()) var_dump($parcela->errors);
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}	
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'users'=>$users,
 		));
-	}
+	}	
 
 	/**
 	 * Deletes a particular model.
@@ -133,7 +159,7 @@ class EmprestimoController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$this->loadModel($id)->fk_user->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -187,8 +213,7 @@ class EmprestimoController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='emprestimo-form')
-		{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='emprestimo-form'){
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
@@ -197,7 +222,5 @@ class EmprestimoController extends Controller
 	public static function formatPrice($vlprice){
 		if(!$vlprice > 0) $vlprice = 0;
 		return "R$ " .number_format($vlprice, 2, "," , ".");
-			
-		}
-	
+		}	
 }
